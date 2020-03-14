@@ -1,0 +1,104 @@
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - walkthrough
+  - assert_recipe
+  - ingredients
+  - steps
+  - how_do_i
+  - what_is_a
+  - next_step
+  - last_step
+  - return_to_start
+  - take_me_to
+
+responses:
+  utter_greet:
+  - text: "Hey, I'm Arby, the AllRecipes Bot! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am Arby, short for the AllRecipesBot."
+
+  utter_url:
+  - text: "Okay, please tell me the URL."
+
+  utter_recipe_assert:
+  - text: "Alright, I got that. Let's go over (recipe-title)." 
+
+  utter_default:
+  - text: "I'm sorry, I don't understand what you mean."
+
+  utter_next_step:
+  - text: "The next step is: [step](step)"
+
+  utter_last_step:
+  - text: "The last step was: [step](step)"
+
+  utter_how_to:
+  - text: "Here's some videos showing how to [peel a carrot](action): [/hello](url)"
+
+  utter_what_is:
+  - text: "Here's the definition of [carrot](object): [/hello](url)"
+
+  utter_ask_action:
+  - text: "Are you ready for the next step?"
+  - text: "Do you want the next step?"
+  - text: "Should I continue to the next step?"
+
+  utter_ingredients:
+  - text: "Here are the ingredients:\n [ingredients](ingredients)"
+
+  utter_steps: 
+  - text: "Here are all the steps:\n [steps](steps)"
+
+  utter_ask_recipe:
+  - text: "Do you want to see steps or ingredients?"
+
+actions:
+  - action_assert_recipe
+  - action_how_to
+  - action_define
+  - action_all_steps
+  - action_ingredients
+  - action_last_step
+  - action_next_step
+  - action_first_step
+  - action_take_me_to
+
+slots:
+  action:
+    type: text
+  object:
+    type: text
+  url:
+    type: text
+  numb:
+    type: text
+
+entities:
+  - action
+  - object
+  - url
+  - numb
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
